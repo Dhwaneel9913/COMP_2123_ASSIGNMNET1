@@ -52,7 +52,10 @@ const deleteEmployee = async (req, res) => {
     const { eid } = req.query;
     const deletedEmployee = await Employee.findByIdAndDelete(eid);
     if (deletedEmployee) {
+      res.status(404).json({ status: true, message: 'Employee Deleted' });
+
       res.status(204).end();
+      
     } else {
       res.status(404).json({ status: false, message: 'Employee not found' });
     }
