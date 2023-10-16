@@ -22,7 +22,7 @@ const loginUser = async (req, res) => {
         status: true,
         username: user.username,
         message: 'User logged in successfully',
-        jwt_token: user.id, // Replace with actual JWT token
+        jwt_token: user.id,
       });
     } else {
       res.status(400).json({ status: false, message: 'Invalid Username and password' });

@@ -40,7 +40,7 @@ const updateEmployee = async (req, res) => {
     if (updatedEmployee) {
       res.status(200).json({ status: true, data: updatedEmployee });
     } else {
-      res.status(404).json({ status: false, message: 'Employee not found' });
+      res.status(505).json({ status: false, message: 'Employee not found' });
     }
   } catch (error) {
     res.status(500).json({ status: false, message: error.message });
